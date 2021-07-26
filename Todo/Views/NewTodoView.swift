@@ -4,13 +4,16 @@ import SwiftUI
 
 struct NewTodoView: View {
     @ObservedObject var model = NewTodoViewModel()
+    @EnvironmentObject var mainViewModel: MainViewModel
     
     var body: some View {
         HStack {
-            TextField("Write new todo ...", text: $model.text) { changed in
+            TextField("Write new todo ...", text: $model.text, onEditingChanged: { changed in
                 withAnimation {
                     model.textFieldFocused = changed
                 }
+            }) {
+                model.addNewTodo()
             }
             .padding(10)
             .padding(.horizontal, 10)
@@ -24,7 +27,7 @@ struct NewTodoView: View {
                         HStack {
                             ForEach(0..<Assets.colorSets[0].count) { i in
                                 Circle()
-                                    .stroke(Assets.shared.getColor(Assets.colorSets[0][i]), lineWidth: 3)
+                                    .stroke(Assets.shared.getColor(Assets.colorSets[mainViewModel.colorPalette][i]), lineWidth: 3)
                                     .frame(width: 25, height: 25)
                                     .onTapGesture {
                                         withAnimation {

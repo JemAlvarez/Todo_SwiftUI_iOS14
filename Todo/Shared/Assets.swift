@@ -25,6 +25,8 @@ struct Assets {
         case chevron_down
         case close
         case colors
+        case trash
+        case edit
     }
     
     func getIcon(_ icon: Icons) -> String {
@@ -41,6 +43,10 @@ struct Assets {
             return "close-circle"
         case .colors:
             return "color-swatch"
+        case .trash:
+            return "trash"
+        case .edit:
+            return "edit"
         }
     }
     

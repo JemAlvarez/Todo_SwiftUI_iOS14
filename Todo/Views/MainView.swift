@@ -3,7 +3,7 @@
 import SwiftUI
 
 struct MainView: View {
-    @ObservedObject var model = MainViewModel()
+    @StateObject var model = MainViewModel()
     @FetchRequest(sortDescriptors: [])
     var todos: FetchedResults<Todo>
     
@@ -14,19 +14,28 @@ struct MainView: View {
                 
                 VStack {
                     ScrollView(showsIndicators: false) {
-                        ForEach(0..<10) { _ in
-                            TodoView(title: "Text", color: .blue, checked: true)
-                            // if last add padding
+                        ForEach(0..<todos.count, id: \.self) { i in
+                            TodoView(todo: todos[i], editing: $model.editing)
+                                .padding(.bottom, i == todos.count - 1 ? 20 : 0)
                         }
                     }
                     
                     NewTodoView()
                 }
                 .padding([.horizontal, .top])
-                .navigationTitle("10 To-do's")
+                .navigationTitle("\(todos.count) To-do\(todos.count != 1 ? "'s" : "")")
+                .navigationBarItems(trailing: Button(action: {
+                    withAnimation {
+                        model.editing.toggle()
+                    }
+                }) {
+                    SVG(Assets.shared.getIcon(.edit), color: .accentColor)
+                }
+                )
             }
             .navigationViewStyle(StackNavigationViewStyle())
         }
+        .environmentObject(model)
     }
 }
 

@@ -4,6 +4,7 @@ import SwiftUI
 
 @main
 struct TodoApp: App {
+    let vc = PersistenceModel.shared.container.viewContext
     
     init() {
         // navigation bar title appearance
@@ -20,6 +21,7 @@ struct TodoApp: App {
     var body: some Scene {
         WindowGroup {
             MainView()
+                .environment(\.managedObjectContext, vc)
         }
     }
 }

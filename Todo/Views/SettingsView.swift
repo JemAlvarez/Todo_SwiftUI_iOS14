@@ -3,6 +3,7 @@
 import SwiftUI
 
 struct SettingsView: View {
+    @EnvironmentObject var mainViewModel: MainViewModel
     @Environment(\.presentationMode) var presentationMode
     @State var selection = 0
     
@@ -41,8 +42,15 @@ struct SettingsView: View {
                         VStack {
                             HStack {
                                 Spacer()
-                                SVG(Assets.shared.getIcon(.checkbox), color: .accentColor)
+                                SVG(Assets.shared.getIcon(mainViewModel.colorPalette == 0 ? .checkbox : .square), color: .accentColor)
                                     .frame(width: 27)
+                                    .opacity(mainViewModel.colorPalette == 0 ? 1 : 0.5)
+                                    .onTapGesture {
+                                        withAnimation {
+                                            mainViewModel.colorPalette = 0
+                                            UserDefaults.standard.set(mainViewModel.colorPalette, forKey: "Color")
+                                        }
+                                    }
                                 Spacer()
                                 ForEach(0..<Assets.colorSets[0].count) { i in
                                     Circle()
@@ -57,13 +65,19 @@ struct SettingsView: View {
                             
                             HStack {
                                 Spacer()
-                                SVG(Assets.shared.getIcon(.square), color: .accentColor)
+                                SVG(Assets.shared.getIcon(mainViewModel.colorPalette != 0 ? .checkbox : .square), color: .accentColor)
                                     .frame(width: 27)
-                                    .opacity(0.5)
+                                    .opacity(mainViewModel.colorPalette != 0 ? 1 : 0.5)
+                                    .onTapGesture {
+                                        withAnimation {
+                                            mainViewModel.colorPalette = 1
+                                            UserDefaults.standard.set(mainViewModel.colorPalette, forKey: "Color")
+                                        }
+                                    }
                                 Spacer()
-                                ForEach(0..<Assets.colorSets[0].count) { i in
+                                ForEach(0..<Assets.colorSets[1].count) { i in
                                     Circle()
-                                        .strokeBorder(Assets.shared.getColor(Assets.colorSets[0][i]), lineWidth: 3)
+                                        .strokeBorder(Assets.shared.getColor(Assets.colorSets[1][i]), lineWidth: 3)
                                         .frame(width: 25, height: 25)
                                     Spacer()
                                 }
