@@ -51,8 +51,8 @@ struct TodoView: View {
                     .onTapGesture {
                         withAnimation{
                             PersistenceModel.shared.container.viewContext.delete(todo)
+                            PersistenceModel.shared.onSaveContext()
                         }
-                        PersistenceModel.shared.onSaveContext()
                     }
             }
         }

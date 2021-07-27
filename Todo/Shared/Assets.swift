@@ -20,6 +20,7 @@ struct Assets {
     
     enum Icons{
         case checkbox
+        case circle_checkbox
         case square
         case settings
         case chevron_down
@@ -50,6 +51,8 @@ struct Assets {
             return "edit"
         case .edit2:
             return "edit-2"
+        case .circle_checkbox:
+            return "tick-circle"
         }
     }
     

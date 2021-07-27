@@ -13,7 +13,9 @@ struct NewTodoView: View {
                     model.textFieldFocused = changed
                 }
             }) {
-                model.addNewTodo()
+                withAnimation {
+                    model.addNewTodo()
+                }
             }
             .foregroundColor(.accentColor)
             .padding(10)
@@ -51,6 +53,17 @@ struct NewTodoView: View {
                 }
             } else {
                 SettingsButtonView()
+            }
+            
+            if !model.text.isEmpty {
+                SVG(Assets.shared.getIcon(.circle_checkbox), color: .accentColor)
+                    .frame(width: 27)
+                    .onTapGesture {
+                        withAnimation {
+                            model.addNewTodo()
+                            UIApplication.shared.endEditing()
+                        }
+                    }
             }
         }
         .padding(.bottom, model.textFieldFocused ? 10 : 0)
