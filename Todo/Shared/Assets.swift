@@ -27,6 +27,7 @@ struct Assets {
         case colors
         case trash
         case edit
+        case edit2
     }
     
     func getIcon(_ icon: Icons) -> String {
@@ -47,6 +48,8 @@ struct Assets {
             return "trash"
         case .edit:
             return "edit"
+        case .edit2:
+            return "edit-2"
         }
     }
     

@@ -29,7 +29,7 @@ struct MainView: View {
                         model.editing.toggle()
                     }
                 }) {
-                    SVG(Assets.shared.getIcon(.edit), color: .accentColor)
+                    SVG(Assets.shared.getIcon(model.editing ? .edit2 : .edit), color: .accentColor)
                 }
                 )
             }
