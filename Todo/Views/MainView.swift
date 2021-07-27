@@ -27,6 +27,7 @@ struct MainView: View {
                 .navigationBarItems(trailing: Button(action: {
                     withAnimation {
                         model.editing.toggle()
+                        UIApplication.shared.endEditing()
                     }
                 }) {
                     SVG(Assets.shared.getIcon(model.editing ? .edit2 : .edit), color: .accentColor)

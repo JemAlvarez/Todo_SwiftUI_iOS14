@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CA2DBC3426B0665900806D6B /* SwifterSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CA2DBC3326B0665900806D6B /* SwifterSwift */; };
+		CA3221CC26B078A4004DCDE6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3221CB26B078A4004DCDE6 /* Extensions.swift */; };
 		CA9929C726B06EC500E77D61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA9929C626B06EC500E77D61 /* Assets.xcassets */; };
 		CAA52FAA26ACDA9700D34413 /* TodoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA52FA926ACDA9700D34413 /* TodoApp.swift */; };
 		CAA52FAC26ACDA9700D34413 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA52FAB26ACDA9700D34413 /* MainView.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CA3221CB26B078A4004DCDE6 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		CA9929C626B06EC500E77D61 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CAA52FA626ACDA9700D34413 /* Todo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Todo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAA52FA926ACDA9700D34413 /* TodoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoApp.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 			children = (
 				CAA52FBC26ACDE9200D34413 /* Assets.swift */,
 				CAA52FD226AE434C00D34413 /* PersistenceModel.swift */,
+				CA3221CB26B078A4004DCDE6 /* Extensions.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 				CAA52FC726ACF23300D34413 /* NewTodoView.swift in Sources */,
 				CAA52FCF26AE42E300D34413 /* MainViewModel.swift in Sources */,
 				CAA52FCD26AE414C00D34413 /* NewTodoViewModel.swift in Sources */,
+				CA3221CC26B078A4004DCDE6 /* Extensions.swift in Sources */,
 				CAA52FC126ACE36E00D34413 /* TodoView.swift in Sources */,
 				CAA52FD326AE434C00D34413 /* PersistenceModel.swift in Sources */,
 				CAA52FC926ACF56800D34413 /* SettingsButtonView.swift in Sources */,
