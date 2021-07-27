@@ -30,7 +30,7 @@ struct MainView: View {
                         UIApplication.shared.endEditing()
                     }
                 }) {
-                    SVG(Assets.shared.getIcon(model.editing ? .edit2 : .edit), color: .accentColor)
+                    SVG(Assets.shared.getIcon(model.editing ? .edit2 : .edit), color: model.editing ? .red : .accentColor)
                 }
                 )
             }
