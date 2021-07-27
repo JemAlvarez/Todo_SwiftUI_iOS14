@@ -1,12 +1,13 @@
 //
 
-import Foundation
+import SwiftUI
 
 class MainViewModel: ObservableObject {
     @Published var editing = false
     @Published var colorPalette: Int
     
     init() {
-        colorPalette = UserDefaults.standard.integer(forKey: "Color")
+        let storedColorVal = UserDefaults.standard.integer(forKey: "Color")
+        colorPalette = storedColorVal
     }
 }

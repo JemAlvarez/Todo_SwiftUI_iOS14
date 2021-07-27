@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA2DBC3426B0665900806D6B /* SwifterSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CA2DBC3326B0665900806D6B /* SwifterSwift */; };
 		CAA52FAA26ACDA9700D34413 /* TodoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA52FA926ACDA9700D34413 /* TodoApp.swift */; };
 		CAA52FAC26ACDA9700D34413 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA52FAB26ACDA9700D34413 /* MainView.swift */; };
 		CAA52FAE26ACDA9E00D34413 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAA52FAD26ACDA9E00D34413 /* Assets.xcassets */; };
@@ -47,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA2DBC3426B0665900806D6B /* SwifterSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,6 +149,9 @@
 			dependencies = (
 			);
 			name = Todo;
+			packageProductDependencies = (
+				CA2DBC3326B0665900806D6B /* SwifterSwift */,
+			);
 			productName = Todo;
 			productReference = CAA52FA626ACDA9700D34413 /* Todo.app */;
 			productType = "com.apple.product-type.application";
@@ -174,6 +179,9 @@
 				Base,
 			);
 			mainGroup = CAA52F9D26ACDA9700D34413;
+			packageReferences = (
+				CA2DBC3226B0665900806D6B /* XCRemoteSwiftPackageReference "SwifterSwift" */,
+			);
 			productRefGroup = CAA52FA726ACDA9700D34413 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -400,6 +408,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CA2DBC3226B0665900806D6B /* XCRemoteSwiftPackageReference "SwifterSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwifterSwift/SwifterSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CA2DBC3326B0665900806D6B /* SwifterSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CA2DBC3226B0665900806D6B /* XCRemoteSwiftPackageReference "SwifterSwift" */;
+			productName = SwifterSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		CAA52FD426AE43C000D34413 /* TodoDataModel.xcdatamodeld */ = {

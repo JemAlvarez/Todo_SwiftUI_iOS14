@@ -15,6 +15,7 @@ struct NewTodoView: View {
             }) {
                 model.addNewTodo()
             }
+            .foregroundColor(.accentColor)
             .padding(10)
             .padding(.horizontal, 10)
             .background(Color("BackgroundColor").brightness(0.05))
@@ -31,6 +32,7 @@ struct NewTodoView: View {
                                     .frame(width: 25, height: 25)
                                     .onTapGesture {
                                         withAnimation {
+                                            model.selectedColor = i
                                             model.showingColor = false
                                         }
                                     }
@@ -39,7 +41,7 @@ struct NewTodoView: View {
                         .padding(.horizontal)
                     }
                     
-                    SVG(Assets.shared.getIcon(.colors), color: .accentColor.opacity(0.5))
+                    SVG(Assets.shared.getIcon(.colors), color: Assets.shared.getColor(Assets.colorSets[mainViewModel.colorPalette][model.selectedColor]).opacity(0.5))
                         .frame(width: 27)
                         .onTapGesture {
                             withAnimation {

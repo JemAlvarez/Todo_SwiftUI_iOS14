@@ -1,6 +1,7 @@
 //
 
 import SwiftUI
+import SwifterSwift
 
 struct TodoView: View {
     @EnvironmentObject var mainViewModel: MainViewModel
@@ -27,7 +28,7 @@ struct TodoView: View {
                         
                         Spacer()
                         
-                        Circle().strokeBorder(Color.blue, lineWidth: 3)
+                        Circle().strokeBorder(Color(UIColor(hexString: todo.color ?? "#000") ?? UIColor(.white)), lineWidth: 3)
                             .frame(width: 25, height: 25)
                     }
                     
